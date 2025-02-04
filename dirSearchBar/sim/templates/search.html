@@ -1,0 +1,53 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stoke 1 | Rapid & Real Time Database Search Tool</title>
+    <script src="https://unpkg.com/htmx.org@1.9.5" integrity="sha384-xcuj3WpfgjlKF+FXhSQFQ0ZNr39ln+hwjN3npfM9VBnUskLolQAcN80McRIVOPuO" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="{% static 'default.css'%}">
+
+</head>
+
+<body id="container">
+    <h3 id="page-title">
+        Stroke 1 - Rapid & Real Time Database Enquiry
+    </h3>
+
+    <h4>
+        <span class="htmx-indicator">
+            ...
+        </span>
+    </h4>
+    
+    <div id="form-container">
+        <form id="main-form">
+            {% csrf_token %}
+            <input 
+            class="form-control"
+            name="search"
+            placeholder="Start to type for live search results.."
+            hx-get="/search/results"
+            hx-trigger="keyup changed, search"
+            hx-target="#search-results"
+            hx-indicator=".htmx-indicator"
+            size="50vh">
+        </form>
+    </div>
+
+    <div id="search-results">
+        {% include "searchResults.html" %}
+
+    </div>
+
+    <div id="developer-detail">
+        <h5>
+            David Ikin
+        </h5>
+    </div>
+
+</body>
+</html>

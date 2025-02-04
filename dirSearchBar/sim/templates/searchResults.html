@@ -1,0 +1,12 @@
+<div id="dynamic-summary-text">
+    Matches {{people|length}} / {{count}} people in the directory.
+</div>
+
+{% for person in people %}
+<p>
+    {{ person.name }}
+</p>
+<p>
+    {{ person.description }}
+</p>
+{% endfor %}
