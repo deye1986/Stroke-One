@@ -51,9 +51,9 @@
     border-radius: 4px;
 }
 
-@media screen and (max-width: 800px) {
+/* @media screen and (max-width: 800px) {
     #container {
-        background-color: rgb(53, 180, 223);  /* For mobile screens */
+        background-color: rgb(53, 180, 223);
     }
 
     #form-container{
@@ -75,4 +75,6 @@
         font-family: Arial, Helvetica, sans-serif;
     }
 
-}
+} 
+*/ 
+
